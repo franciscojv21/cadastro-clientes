@@ -647,9 +647,48 @@ public class areaCadastro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void butaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butaoCadastrarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_butaoCadastrarActionPerformed
+       String codigo = campoCodigo.getText();
+    String nome = campoNome.getText();
+    String nc = campoNC.getText();
+    String cpf = campoCPF.getText();
+    String rg = campoRG.getText();
+    String data = campoData.getText();
+    String cnpj = campoCNPJ.getText();
+    String insEst = campoinsEst.getText();
+    
+    String endereco = campoEndereco.getText();
+    String numero = campoNumero.getText();
+    String complemento = campoComplemento.getText();
+    String cep = campoCEP.getText();
+    String bairro = campoBairro.getText();
+    String outrasInfo = boxoutrasInfo1.getSelectedItem().toString();
+    String cidades = boxCidades.getSelectedItem().toString();
+    
+    String fone = campoFone.getText();
+    String fax = campoFax.getText();
+    String celular = campoCelular.getText();
+    String email = campoEmail.getText();
+    String observacoes = areaOBV.getText();
+    
+    String usuario = campousuarioLogin.getText();
+    String senha = new String(senhacampoLogin.getPassword());
+    String confirSenha = new String(confirmarcampoLogin.getPassword());
+    boolean ativoInativo = boxAtivo.isSelected();
 
+    // 2. Cria o objeto Clientes (agora tudo combina, sem dor de cabeça)
+    Clientes cliente = new Clientes(
+        codigo, nome, nc, cpf, rg, data, cnpj, insEst, 
+        endereco, numero, complemento, cep, bairro, outrasInfo, 
+        cidades, fone, fax, celular, email, observacoes, 
+        usuario, senha, confirSenha, ativoInativo
+    );
+
+    // 3. Avisa que deu bom
+    javax.swing.JOptionPane.showMessageDialog(this, "Cadastrado com sucesso!");
+
+    }//GEN-LAST:event_butaoCadastrarActionPerformed
+    
+    
     private void campoCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoCodigoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoCodigoActionPerformed
